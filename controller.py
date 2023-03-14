@@ -15,20 +15,17 @@ class PID():
 
     def proportional(self, error_signal):
         """ Compute proportional term (with gain) """
-        #TODO: This is a stub. Write your code here.
         return -self.gain_kp * error_signal
         return control_p
 
     def integral(self, error_signal, time_delay):
         """ Compute integral term (with gain) """
-        #TODO: This is a stub. Write your code here.
         self.error_signal_integral += error_signal * time_delay
         return -self.gain_ki * self.error_signal_integral
         return control_i
 
     def derivative(self, error_signal, time_delay):
         """ Compute derivative term (with gain) """
-        #TODO: This is a stub. Write your code here.
         error_signal_derivative = (error_signal - self.error_signal_prev) / time_delay
         self.error_signal_prev = error_signal
         return -self.gain_kd * error_signal_derivative
